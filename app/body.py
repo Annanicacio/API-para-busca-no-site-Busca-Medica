@@ -128,12 +128,13 @@ def body_medico(
     codigo_especialidade = ""
     if espec_med:
         codigo_especialidade = mapa_especialidades.get(espec_med.upper(), "")
+        
+    
 
-    # 3. Montagem do Payload
     payload_python = [
         {
             "useCaptchav2": True,
-            "captcha": "COLE_SEU_CAPTCHA_NOVO_AQUI...", 
+            "captcha": "0cAFcWeA4-NkVTzO_EHjVtKRCdmSgGUCIV_pavYtu6RgDADMQxBXnqTBNdGlhW2c_CfG4dR-_1OYqsJhykvJRUcvt6FfXUY4tl0ABt1ZD_FElztprbeUMkOG5VWQepWNldKgCZA5V3d8Ki23qORxyUvumbB1tpORIrHSN3Cw-YXBmXF8UJh3eYh5x_WrLZAJN2PdCe9AP8uPN9VDXYspsqdnZvw4wSmnyg4U2fcq7j2Y32r90cbiJ0lWN5yXbmYTfMq86pdO-wX-P8WgIxwldYhULiC09Ngj7-nC9VwDqxC-0bL4DrOQzRQ-fck81uae4Pj-5iDCHDAmdHb6CKi0cmZV2Jtp5yTje6wIhyduv-DR88iS1pk16CYpo08TceiFea8MUwuYyqnmWn5HIc7ajTiau2yYfE7AcFM-vvMmeU9TmWb27TCUmYraxFKITttMGHWY2yOXRelbNek9KNqcIntFXmIy8ikNSiGPHUqXxnrHqmE1I2ejh-CDjjjENq_UReh0n7w0Dq7nJHhB796ZKxjjp3eSu5Uof0K7SVRypsZZhcDSmSpG9e-BwoOminsLaszsqfm4nPjBeIUb1ixp9BLnjIl9AaNRXwxytbxCFNHm7W6vJP5Nbz3bYLD5ALd7GiOPetjJbOSeb7YfTY7ObOrnBdP2murLyUXT0rM_Of8RIGxVE6L1t-JO4F6o4iWYfp6pzrncFHo2kFByqXBr1_8mM92ifEjIkAAzOPeXL_pGhLFVv9xx1CZ-AHjBoWuMqsDuXTmWxpXf2m", 
             "medico": {
                 "nome": nome_medico,
                 "ufMedico": uf,
@@ -147,3 +148,38 @@ def body_medico(
     ]
 
     return payload_python
+
+
+def body_profissional(
+    nome_hospital,
+    nome,
+    descricao,
+    sus,
+    vinculacao,
+    tipo,
+    quantidade,   
+): 
+    
+   
+    payload_python = [
+            {
+            "useCaptchav2": True,
+            "captcha": "", 
+            "profissional": {
+                "nome_hospital": nome_hospital,
+                "nome": nome,
+                "descricao": descricao,
+                "sus": sus,
+                "vinculacao": vinculacao,
+                "tipo": tipo,   
+                    
+                },
+                "page": 1,
+                "pageNumber": 1,
+                "pageSize": quantidade,
+                
+            }
+        ]
+        
+    return payload_python
+
